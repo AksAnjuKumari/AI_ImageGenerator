@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Image Generation</h2>
+
+<form method="post" action="/Home/GenerateImage">
+    <label for="prompt">Enter a prompt for the image generation:</label>
+    <input type="text" id="prompt" name="prompt" required />
+    <button type="submit">Generate Image</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <h3>Generated Image</h3>
+    //If want to show Image url then uncomment bellow line
+   // <p>@ViewBag.Result</p>
+    
+   @*  <img src="@ViewBag.Result" alt="Generated Image" /> *@
+   <img src="@ViewBag.Result" alt="Generated Image" style="max-width: 40%; height: 40%;" />
+}
